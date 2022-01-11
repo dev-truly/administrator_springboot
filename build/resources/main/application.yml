@@ -31,3 +31,6 @@ spring:
 logging:
   level:
    root: info
+  file:
+    path: /logs
+    name: log-default
