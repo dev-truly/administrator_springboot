@@ -1,0 +1,12 @@
+{
+  "groups": [
+    {
+      "name": "spring.jpa",
+      "type": "java.util.Properties",
+      "sourceType": "com.web.relocation.config.RelocationWebRootConfig",
+      "sourceMethod": "hibernateConfig()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

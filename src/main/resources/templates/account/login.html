@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<title>로그인</title>
+	<link rel="Stylesheet" href="/css/default.css" />
+	<style type="text/css">
+		#logintitle{
+			font-size:30px;
+			font-weight: bold;
+			font-family: Arial;
+			margin-bottom: 20px;
+		}
+
+		.inputData {
+			border:#e7e7e7 1px solid;
+			font-size:15px;
+			font-family: '맑은 고딕', '고딕';
+			width: 300px;
+			height: 45px;
+			padding-left:5px;
+			font-weight:bold;
+		}
+
+		input[class='inputData']:-ms-input-placeholder { color: #d4d4d4;font-weight:normal;}
+		input[class='inputData']::-webkit-input-placeholder{color:#d4d4d4;font-weight:normal;}
+		input[class='inputData']::-moz-placeholder{color:#d4d4d4;font-weight:normal;}
+
+		#formArea {
+			padding-top:30px;
+			position:relative;
+			text-align:center;
+			background-color:#eeeff8;
+		}
+		#loginArea {
+			margin:0 auto;
+			width:562px;
+		}
+		#idArea {margin-bottom:10px;}
+		#loginSubmit {
+			width:140px;
+			height:104px;
+			color:#fff;
+			font-size:20px;
+			font-weight:bold;
+			margin-left:20px;
+			border:solid 1px #6673d9;
+		}
+
+		.id_text { ime-mode:disabled; line-height:14px;}
+		.pw_text { line-height:15px; }
+
+		#idSaveArea {
+			padding:20px 0 30px 0;
+			margin:0 auto;
+			width:562px;
+			text-align:left;
+		}
+		#idsave {
+			width:18px;
+			height:18px;
+		}
+		.floatL {
+			float:left;
+		}
+		.descText {
+			font-size:14px;
+			color:#000;
+			font-weight:bold;
+			width:60px;
+			margin-right:35px;
+			text-align:left;
+			line-height:45px;
+		}
+		input[type="submit"] {
+			background-color: #6673d9;
+		}
+	</style>
+</head>
+<body>
+	<div style="width:100%; position:absolute; top:50%; text-align:center; margin-top:-320px;">
+
+		<div>
+			<p style="height:80px;"><img src="/img/NHN COMMERCE.png" height="55px;" /></p>
+		</div>
+
+		<form name="loginform" id="loginform" method="post" action="/account/login" >
+			<div id ="formArea" style="margin:0 auto;">
+				<h1 id="logintitle"  style="padding-bottom:20px;border-bottom:solid 1px #666666;">Relocation Admin Login</h1>
+				<div id="loginArea">
+					<div class="floatL" id="idArea">
+						<div class="descText floatL">아이디</div>
+						<div class="floatL"><input type="text" id="userId"  name="userId" class="inputData id_text" tabindex="1" placeholder="아이디" value="" NNull="true" valTitle="아이디" valType="id" /></div>
+					</div>
+					<div class="floatL" >
+						<div class="descText floatL">비밀번호</div>
+						<div class="floatL" ><input type="password" id="password"  name="password" class="inputData pw_text" tabindex="2" placeholder="비밀번호" NNull="true" valTitle="비밀번호" valType="pwd" /></div>
+					</div>
+					<input type="submit" class="loginSubmit" id="loginSubmit" value="로그인" onfocus="this.blur();" />
+				</div>
+				<div id="idSaveArea">
+					<div style="margin-left:95px;">
+						<input type="checkbox" name="idsave" id="idsave" onClick="chk_saveid()" /><label for="idsave" style="font-size:13px;color:#000;margin-left:8px;" >아이디저장</label>
+					</div>
+				</div>
+			</div>
+			<div style="margin-top:20px;">
+				* 비밀번호 분실시 통합 관리자에게 문의 주시기 바랍니다.
+			</div>
+		</form>
+	</div>
+
+	<script type="text/javascript" src="/js/common/jquery-3.6.0.min.js" ></script>
+	<script type="text/javascript" src="/js/common/cookie.js" ></script>
+	<script type="text/javascript" src="/js/common/validation.js" ></script>
+	<script type="text/javascript" src="/js/common/common.js" ></script>
+	<script>
+		const idCookie = new Cookie('idsave');
+		idCookie.time(1000 * 3600 * 24 * 30);
+
+		/*let testPattern = {
+			id	: ["^[a-zA-Z0-9_-]{{?},{?}}$","영문+숫자형식의 {?}~{?}자리", [7, 10]],
+		}*/
+		let testPattern = {};
+
+		let submitFunc = function() {
+			const sucFunc = function(data) {
+				if (data.result == "success") {
+					location.href = "/admin/main";
+				}
+				else {
+					alert(data.msg);
+					location.reload();
+				}
+			}
+			ajaxProcess(this._form.action, sucFunc, function() {alert('error')}, $(this._form).serialize());
+		};
+		//let faildFunc = function(msg = '') { alert(msg) };
+
+		let loginValid = new Validation(document.loginform, ['userId', 'password'], testPattern);
+		loginValid.setSubmitAction(submitFunc);
+		//loginValid.setFaildAction(faildFunc);
+		let f = document.loginform;
+
+		function chk_saveid() {
+			if (f.idsave.checked) idCookie.set(f.userId.value);
+			else idCookie.del();
+		}
+
+		function inputDataFocus() {
+			f.idsave.checked = ((f.userId.value = idCookie.get()) != "");
+			if (idCookie.get()) {
+				document.getElementById('password').focus();
+			}
+			else {
+				document.getElementById('userId').focus();
+			}
+		}
+
+		inputDataFocus();
+	</script>
+</body>
+</html>

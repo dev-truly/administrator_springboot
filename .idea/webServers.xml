@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9629c1e8-a19b-4b96-af3d-61ec98c2d968" name="[TC] 이전관리자">
+        <fileTransfer rootFolder="/home/centos/relocation_web" accessType="SFTP" host="125.6.38.156" port="20165" sshConfigId="effae14a-fa27-472b-a3c1-c47bf0e25c7a" sshConfig="centos@125.6.38.156:20165 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

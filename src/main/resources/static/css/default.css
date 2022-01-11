@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/* Default Style
+*******************************************************/
+* {margin:0; padding:0;}
+html, body, div, span, object, frame, iframe,
+table, caption, thead, tbody, tfoot, tr, th, td,
+form, fieldset, legend, label, input, select, textarea, button,
+dl, dt, dd, ol, ul, li,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre {font-size:12px; line-height:16px; font-family: '맑은 고딕', '고딕', '굴림'; color:#666666; }
+a, abbr, acronym, address, big, cite, code, dfn, em, strong {font-size:100%;}
+html, body {}
+hr {display:none;}
+abbr, img, fieldset {border:0 none;}
+address, cite, em {font-style:normal;}
+ol, ul, li {list-style:none;}
+a,
+a:hover,
+a:active,
+a:link,
+a:visited {text-decoration:none; color:#666666; }
+table { border-collapse: collapse; width: 100%; }
+table caption, fieldset legend {position:absolute; left:10000%; top:-10000%; overflow:hidden; visibility:hidden; width:0; height:0; font-size:0; line-height:0;}
+button, label, input.img_input {cursor:pointer;}
+label {display:-moz-inline-stack;/* FOR FF2 ONLY */ display:inline-block; *display:inline;/* FOR IE~7 ONLY */ vertical-align:top; *zoom:1;/* FOR IE~7 ONLY */} /* 테스트후재정의필요 : 사용시 ie6,7에서 label 간격 붙어버림, 거의 모든 브라우저에서 정렬 불규칙하게 틀어짐 */
+button{overflow:visible; border:0; background:transparent;}
+input.txt_input {height:18px; margin:-1px 0 1px; border:1px solid #c0dff3;}
+input.rdo_input, input.chk_input {width:16px; height:16px;}
+fieldset, label, input, select, textarea, button, label img, fieldset img {vertical-align:top;}
+fieldset.inline-block {vertical-align:middle;}
+
+/* common */
+.hiddenObj {position:absolute; left:-10000% !important; top:-10000%; overflow:hidden; width:1px;height:1px;margin:0;padding:0;font-size:0;line-height:0;}
+.float_left {float:left;}
+.float_right {float:right;}
+.clear_left {clear:left;}
+.clear_right {clear:right;}
+.clear_both {clear:both;}
+.clear {*zoom:1; /* FOR IE~7 ONLY */}
+.clear:after {content:" "; display:block; clear:both;}
+.clear_blank {clear:both; overflow:hidden; height:0; font-size:0; line-height:0;}
+.block {display:block;}
+.inline-block {display:-moz-inline-stack;/* FOR FF2 ONLY */ display:inline-block; *display:inline;/* FOR IE~7 ONLY */ vertical-align:top; *zoom:1;/* FOR IE~7 ONLY */}
+
+/* text-align */
+.txt_left {text-align:left !important;}
+.txt_right {text-align:right !important;}
+.txt_center {text-align:center !important;}
+.txt_top {vertical-align:top !important;}
+.txt_middle {vertical-align:middle !important;}
+
+/* border */
+.bdnone {border:0 none !important;}
+
+
+/* png 24*/
+.brow_ie_6 .png24 {
+	tmp:expression(setPng24(this));
+}
+
+
+
+#skipNav{position:absolute; left:-5000px; top:-5000px;}
+
+#quick{position:fixed; left:0; bottom:0; z-index:2; height:219px; width:100%; }
+#quick .quick_menu{font-size:0; line-height:0;}
+/* IE6 Fixed Position Jitter Fix */
+* html, * html body {background-attachment:fixed;}
+/* IE6 position fixed Bottom */
+* html #quick {position:absolute;bottom:auto;}
+
+
+/* For Print */
+@media print {
+	#content { padding: 0; margin: 0; }
+	#header,
+	#footer { display: none; }
+}
+
+input {border:1px solid #dbdbdb; font-size:12px; vertical-align:top;height:16px; }
+select {height:18px;vertical-align:middle;font:9pt gulim;color:#676767;border:1px solid #dbdbdb;}
+option {height:18px;vertical-align:middle;font:9pt gulim;color:#676767;border:1px solid #dbdbdb;}
+textarea {border:solid 1px #F0F0F0;background: #F5F1F1;font:9pt gulim;color:#676767;}
+
+input[type='button']:not(.input_button) {
+	background-color:#6673d9;
+	padding:2px 5px 2px 5px;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:bold;
+	font-size:12px;
+	height:22px;
+}
+
+input[type='checkbox'] {
+	border:none;
+}
+
+
