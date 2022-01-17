@@ -7,7 +7,7 @@
     </springProfile>
 
     <springProfile name="local">
-        <property resource="logback-real.properties"/>
+        <property resource="logback-local.properties"/>
     </springProfile>
 
     <springProfile name="real">

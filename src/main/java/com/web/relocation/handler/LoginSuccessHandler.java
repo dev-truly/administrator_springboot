@@ -3,14 +3,20 @@ package com.web.relocation.handler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Configuration
-public class LoginSuccessHandler implements AuthenticationSuccessHandler {
-    public void onAuthenticationSuccess(HttpServletRequest req, HttpServletResponse res, Authentication authentication) throws IOException {
+public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
+    public void onAuthenticationSuccess(
+            HttpServletRequest req,
+            HttpServletResponse res,
+            Authentication authentication
+    ) throws ServletException, IOException {
         /*
         Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
             req.getSession(false).setMaxInactiveInterval(1800);
