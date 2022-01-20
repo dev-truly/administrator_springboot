@@ -1,5 +1,7 @@
 package com.web.relocation.controller;
 
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import com.web.relocation.entity.MenuEntity;
 import com.web.relocation.service.MenuTestService;
 import lombok.Getter;
@@ -54,11 +56,13 @@ public class TestController {
     @ResponseBody
     @RequestMapping(path = {"/test"})
     public String test() throws Exception {
-        logger.trace("Trace Level 테스트");
+        logger.info(String.format("테스트 계정 정보 \n아이디 : tester12\n비밀번호 : %s", "!Love1234356"));
+                //Hashing.sha256().hashString("!Love1234356".toString(), Charsets.UTF_8).toString()));
+        /*logger.trace("Trace Level 테스트");
         logger.debug("DEBUG Level 테스트");
         logger.info("INFO Level 테스트");
         logger.warn("Warn Level 테스트");
-        logger.error("ERROR Level 테스트");
+        logger.error("ERROR Level 테스트");*/
 
 
         return "test";

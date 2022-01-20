@@ -1,6 +1,6 @@
 package com.web.relocation.controller;
 
-import com.web.relocation.dto.AccountDto;
+import com.web.relocation.dto.LoginDto;
 import com.web.relocation.dto.SelectMenuDto;
 import com.web.relocation.service.MenuService;
 import org.json.simple.JSONObject;
@@ -26,7 +26,7 @@ public class MenuController {
     @ResponseBody
     @GetMapping(path = {"/list"})
     public List<SelectMenuDto> viewMenuList(Authentication authentication) throws ParseException {
-        AccountDto userDetails = (AccountDto) authentication.getPrincipal();
+        LoginDto userDetails = (LoginDto) authentication.getPrincipal();
         JSONParser parser = new JSONParser();
         JSONObject obj = (JSONObject) parser.parse(userDetails.getMenuCode());
         List<SelectMenuDto> menu = menuService.findMenuList(obj);

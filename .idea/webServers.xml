@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="b098f383-e764-48c9-b307-b5c89ae52db7" name="[TC] 이나무 DB">
+        <fileTransfer rootFolder="/home/centos/enamoo_database" accessType="SFTP" host="125.6.38.156" port="20165" sshConfigId="effae14a-fa27-472b-a3c1-c47bf0e25c7a" sshConfig="centos@125.6.38.156:20165 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

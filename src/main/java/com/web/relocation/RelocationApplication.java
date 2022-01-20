@@ -1,5 +1,7 @@
 package com.web.relocation;
 
+import com.google.common.base.Charsets;
+import com.google.common.hash.Hashing;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,8 +17,10 @@ import org.springframework.data.convert.Jsr310Converters;
 )
 public class RelocationApplication {
 
-    public static void main(String[] args) { SpringApplication.run(RelocationApplication.class, args); }
-
+    public static void main(String[] args) {
+        SpringApplication.run(RelocationApplication.class, args);
+    }
+    /*
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
@@ -29,5 +33,5 @@ public class RelocationApplication {
             }
 
         };
-    }
+    }*/
 }
