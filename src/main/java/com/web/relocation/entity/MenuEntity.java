@@ -2,7 +2,7 @@ package com.web.relocation.entity;
 
 import com.web.relocation.common.FlagType;
 import com.web.relocation.common.MenuType;
-import com.web.relocation.dto.SelectMenuDto;
+import com.web.relocation.dto.manu.SelectMenuDto;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;

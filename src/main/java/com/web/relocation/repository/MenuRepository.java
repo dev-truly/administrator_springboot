@@ -18,6 +18,8 @@ public interface MenuRepository extends CrudRepository<MenuEntity, String> {
     List<MenuEntity> findAllByMenuCodeInOrderByParentNoAscSortAsc(List<String> menuCode);
 
     List<MenuEntity> findAllByDeletedOrderByParentNoAscSortAsc(FlagType flag);
+
+
     /*@Transactional
     @Query(
             value = "Select m.menu_no, m.menu_name, m.menu_code, m.menu_url From cr_menu m Where `deleted` = 'n'",

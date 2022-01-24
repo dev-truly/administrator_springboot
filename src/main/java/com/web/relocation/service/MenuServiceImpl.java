@@ -2,7 +2,7 @@ package com.web.relocation.service;
 
 import com.web.relocation.common.FlagType;
 import com.web.relocation.common.GenericSpecification;
-import com.web.relocation.dto.SelectMenuDto;
+import com.web.relocation.dto.manu.SelectMenuDto;
 import com.web.relocation.entity.MenuEntity;
 import com.web.relocation.repository.MenuRepository;
 import org.json.simple.JSONArray;

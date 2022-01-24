@@ -1,7 +1,7 @@
 package com.web.relocation.controller;
 
-import com.web.relocation.dto.LoginDto;
-import com.web.relocation.dto.SelectMenuDto;
+import com.web.relocation.dto.account.LoginDto;
+import com.web.relocation.dto.manu.SelectMenuDto;
 import com.web.relocation.service.MenuService;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

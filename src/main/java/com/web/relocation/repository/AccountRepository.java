@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AccountRepository extends CrudRepository<UserEntity, String> {
+public interface AccountRepository extends CrudRepository<UserEntity, String>, UserRepository {
     UserEntity findByUserIdAndPassword(String userId, String password);
 
     Optional<UserEntity> findByUserId(String userId);

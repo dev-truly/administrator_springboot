@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.0.10/relocation?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    url: jdbc:mysql://10.0.0.15:13306/relocation?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: relocation
     password: te59@2pS}Q]F
 
