@@ -1,4 +1,4 @@
-# relocation_admin_application
+# admin_application
 
 셋팅환경 : openjdk11, mariadb10.4.6
 
