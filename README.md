@@ -1,6 +1,6 @@
 # relocation_admin_application
 
-셋팅환경 : openjdk11, mysql5.7
+셋팅환경 : openjdk11, mariadb10.4.6
 
 terminal openjdk 설치 명령어
 
